@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { MDBCard, MDBCardBody, MDBCardImage, MDBView, MDBCardText } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardImage, MDBView, MDBCardText, MDBTooltip } from 'mdbreact';
 import ReactCardFlip from 'react-card-flip';
 import Tag from './Tag'
 import moment from 'moment'
@@ -10,7 +10,7 @@ import premiumLogo from '../media/premium.png'
 export default function Card(props) {
     const { profile } = props
     const { last_login, name, online_status, picture, is_plus, headline } = profile
-    const { distance } = profile.location
+    const { distance, area } = profile.location
     const { anal_position } = profile.sexual
     const { age, body_hair, body_type, eye_color, relationship, smoker, weight, height } = profile.personal
     
@@ -39,9 +39,12 @@ export default function Card(props) {
                         </div>
                         <MDBCardBody>
                             <MDBCardText className="statusBox">
-                                    <Tag status={distance}/>
-                                    <Tag status={online_status}/>
-                                    <Tag status={moment(last_login).startOf('hour').fromNow()}/>
+                                    <MDBTooltip domElement tag="span" placement="top">
+                                        <span><Tag status={distance}/></span>
+                                        <span>{area}</span>
+                                    </MDBTooltip>
+                                    <span><Tag status={online_status}/></span>
+                                    <span><Tag status={moment(last_login).startOf('hour').fromNow()}/></span>
                             </MDBCardText>
                         </MDBCardBody>
                     </MDBCard>       
