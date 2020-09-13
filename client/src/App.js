@@ -19,7 +19,7 @@ function App() {
             onChange={toggleSwitch1}
             readOnly
           />
-          <label className='custom-control-label' htmlFor='customSwitches'>Sort by activity</label>
+          <label className='custom-control-label' htmlFor='customSwitches'>sort by activity</label>
         </div>
       <ShowProfiles sorting={switch1 ? 'ACTIVITY' : 'DISTANCE'}/>
     </div>
