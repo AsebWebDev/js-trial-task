@@ -3,6 +3,7 @@
 
 const PORT = process.env.PORT || 5000;
 
+const cors = require('cors')
 let express = require('express');
 
 let log = require('bunyan').createLogger({
@@ -13,6 +14,10 @@ let log = require('bunyan').createLogger({
 let apiRouter = require('./lib/router');
 
 express()
+  .use(cors({  // Set "Access-Control-Allow-Origin" header
+    origin: (origin, cb) => {
+      cb(null, origin && ( origin.startsWith('http://localhost:') ) )
+  }, optionsSuccessStatus: 200 }))
   .use('/api', (req, res, next) => {
     log.debug(`${req.method} ${req.url}`);
     next();
