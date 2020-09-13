@@ -31,19 +31,17 @@ export default function Card(props) {
                             <h3>{name}</h3>
                             <div id="profile-pic">
                                 {is_plus && <img className="premiumlogo" src={premiumLogo} alt="premiumlogo"/> }
-                                <MDBView hover>
-                                    <MDBCardImage className="img-fluid" src={picture ? picture.url : placeholderPic} waves />   
+                                <MDBView hover zoom>
+                                    <MDBCardImage className="img-fluid" src={picture ? picture.url : placeholderPic} />   
                                 </MDBView>
                             </div>
                             {picture && picture.comment && <div className="comment"><i>"{picture.comment}"</i></div>}
                         </div>
                         <MDBCardBody>
-                            <MDBCardText >
-                                <div className="statusBox">
+                            <MDBCardText className="statusBox">
                                     <Tag status={distance}/>
                                     <Tag status={online_status}/>
                                     <Tag status={moment(last_login).startOf('hour').fromNow()}/>
-                                </div>
                             </MDBCardText>
                         </MDBCardBody>
                     </MDBCard>       
@@ -53,7 +51,7 @@ export default function Card(props) {
                 <div className="card-back">
                     <MDBCard onClick={handleClick}>
                         <div id="profile-pic">
-                            <img className="img-fluid" src={picture ? picture.url : placeholderPic} waves />
+                            <img className="img-fluid" src={picture ? picture.url : placeholderPic} />
                         </div>
                         <MDBCardBody>
                             <div className="user-data-personal">
