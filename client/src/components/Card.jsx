@@ -51,7 +51,7 @@ export default function Card(props) {
                 <div className="card-back">
                     <MDBCard onClick={handleClick}>
                         <div id="profile-pic">
-                            <img className="img-fluid" src={picture ? picture.url : placeholderPic} />
+                            <img className="img-fluid" alt="profile pic" src={picture ? picture.url : placeholderPic} />
                         </div>
                         <MDBCardBody>
                             <div className="user-data-personal">
