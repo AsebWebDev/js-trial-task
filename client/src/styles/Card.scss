@@ -28,6 +28,10 @@
             }
         }
 
+        .card-head {
+            text-align: center;
+        }
+
         .card-body {
             display: flex;
             justify-content: center;
@@ -76,7 +80,18 @@
             }
         }
     } 
-    #profile-pic {
-        min-width: 100%;
+}
+
+#profile-pic {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    .premiumlogo{
+        width: 80px;
+        position: absolute;
+        bottom: 120px;
+        right: 0;
+        z-index: 1;
     }
+
 }
