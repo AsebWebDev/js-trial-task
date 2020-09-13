@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Card from './Card'
+import Loading from './Loading';
 import api from '../api'
 import '../styles/ShowProfiles.scss'
 
@@ -15,7 +16,7 @@ export default function ShowProfiles(props) {
     return (
         <div id="show-profiles">
            {currentProfiles && currentProfiles.map( (item, i) => <Card key={i} profile={item} />)}
-           {!currentProfiles && <p>Loading...</p>}
+           {!currentProfiles && <Loading />}
         </div>
     )
 }

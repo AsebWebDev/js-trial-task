@@ -1,0 +1,26 @@
+#loading-jumbo {
+    display: flex;
+    justify-content: center;
+    width: 100vw; 
+    height: 100vh;
+    color: black; 
+
+    display: flex;
+    justify-content: center;
+    background-image: url("https://www.planetromeo.com/assets/b068898d329e4d479bcf8dbb11a4b4a5.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    .spinner-grow {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .col {
+        width: 100%;
+        max-height: 50vh;
+  
+    }
+        
+}
