@@ -28,7 +28,8 @@ export default {
             //Extract all IDs from basic User data
         const ids = basicUserData.items.map(item => item.id)
         // Fetch detailed userdata
-        
+        const detailedUserData = await this.fetchDetails(parseIds(ids))
+        console.log("fetchAllData -> detailedUserData", detailedUserData)
         return []
     }, 
 
@@ -38,5 +39,12 @@ export default {
             .then(res => res.data)
             .catch(errHandler)
     },
+
+    fetchDetails(idQuery) {
+        return service
+            .get('/profiles?'+idQuery)
+            .then(res => res.data)
+            .catch(errHandler)
+    }
 
 }
