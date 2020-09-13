@@ -4,6 +4,8 @@ import ReactCardFlip from 'react-card-flip';
 import Tag from './Tag'
 import moment from 'moment'
 import '../styles/Card.scss'
+import placeholderPic from '../media/logo.png'
+import premiumLogo from '../media/premium.png'
 
 export default function Card(props) {
     const { profile } = props
@@ -19,7 +21,7 @@ export default function Card(props) {
         setIsFlipped(!isFlipped)
     }
 
-    return (
+    if (profile) { return (
         <div id="card">
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
                 {/* ###### F R O N T ###### */}
@@ -28,8 +30,9 @@ export default function Card(props) {
                         <div className="card-head">
                             <h3>{name}</h3>
                             <div id="profile-pic">
+                                {is_plus && <img className="premiumlogo" src={premiumLogo} alt="premiumlogo"/> }
                                 <MDBView hover>
-                                    {picture && <MDBCardImage className="img-fluid" src={picture.url} waves /> }      
+                                    <MDBCardImage className="img-fluid" src={picture ? picture.url : placeholderPic} waves />   
                                 </MDBView>
                             </div>
                             {picture && picture.comment && <div className="comment"><i>"{picture.comment}"</i></div>}
@@ -50,7 +53,7 @@ export default function Card(props) {
                 <div className="card-back">
                     <MDBCard onClick={handleClick}>
                         <div id="profile-pic">
-                            {picture && <img className="img-fluid" src={picture.url} waves />}
+                            <img className="img-fluid" src={picture ? picture.url : placeholderPic} waves />
                         </div>
                         <MDBCardBody>
                             <div className="user-data-personal">
@@ -66,12 +69,11 @@ export default function Card(props) {
                                     <li><b>Weight:</b> {weight.kg}kg</li>
                                     <li><b>Height:</b> {height.cm}cm</li>
                                 </ul>
-                                
                             </div>
                         </MDBCardBody>
                     </MDBCard>
                 </div>
             </ReactCardFlip>
         </div>
-    )
+    ) } else { return null }
 }
