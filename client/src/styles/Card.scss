@@ -51,6 +51,7 @@
             h4 {
                 text-align: center;
                 color: black;
+                margin: 2px 0;
             }
 
             .user-data-personal {
@@ -58,12 +59,21 @@
                 line-height: normal;
                 font-size: 0.7rem;
                 color: lightgrey;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 0 4%;
 
                 ul {
                     display: flex;
                     flex-direction: column;
                     justify-content: left;
+                    margin: 1% 0;
                     padding: 0;
+
+                    b{
+                        color: black;
+                    }
                 }
                 li {
                     list-style: none;
@@ -75,8 +85,8 @@
             }
 
             img {
-                width: 75%;
-                margin: 1rem;
+                width: 65%;
+                margin: 0.4rem;
             }
         }
     } 

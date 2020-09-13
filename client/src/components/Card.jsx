@@ -9,7 +9,7 @@ import premiumLogo from '../media/premium.png'
 
 export default function Card(props) {
     const { profile } = props
-    const { last_login, name, online_status, picture, is_plus } = profile
+    const { last_login, name, online_status, picture, is_plus, headline } = profile
     const { distance } = profile.location
     const { anal_position } = profile.sexual
     const { age, body_hair, body_type, eye_color, relationship, smoker, weight, height } = profile.personal
@@ -56,6 +56,7 @@ export default function Card(props) {
                         <MDBCardBody>
                             <div className="user-data-personal">
                                 <h4>{name}</h4>
+                                <p>{headline}</p>
                                 <ul>
                                     <li><b>Anal Position:</b>  {anal_position}</li>
                                     <li><b>Body Hair:</b> {body_hair}</li>
