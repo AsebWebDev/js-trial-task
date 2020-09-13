@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
+import api from '../api'
 import '../styles/ShowProfiles.scss'
 
 export default function ShowProfiles() {
     let [currentProfiles, setCurrentProfiles] = useState(null);
     
     useEffect(() => {
-        
     }, [])
 
     return (
