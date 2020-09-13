@@ -29,8 +29,11 @@ export default {
         const ids = basicUserData.items.map(item => item.id)
         // Fetch detailed userdata
         const detailedUserData = await this.fetchDetails(parseIds(ids))
-        console.log("fetchAllData -> detailedUserData", detailedUserData)
-        return []
+        // return combined Data
+        return basicUserData.items.map(item => ( {
+            ...item,                                                // take current item
+            ...detailedUserData.filter(a => a.id === item.id)[0]    // and add additional userdata; only 1 item will be filtered, because id is unique
+        }))
     }, 
 
     fetchBasicData(querySize, sorting) {
