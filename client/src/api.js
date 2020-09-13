@@ -14,8 +14,10 @@ const errHandler = err => {
 export default {
     service,
   
-    fetchAllData() {
-        
+    fetchAllData(querySize, sorting) {
+        console.log("fetchAllData -> sorting", sorting)
+        console.log("fetchAllData -> querySize", querySize)
+        return []
     }, 
 
 }
