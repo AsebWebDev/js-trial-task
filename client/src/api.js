@@ -11,12 +11,24 @@ const errHandler = err => {
   } else throw err
 }
 
+// Parse Query-String from array of given ids (Numbers)
+const parseIds = (ids) => {
+    let result = 'ids='
+    ids.forEach(element => result = result + element.toString() + '&ids=')
+    result = result.substring(0, result.length-5); // cut off the last not needed '&ids='
+    return result
+}
+
 export default {
     service,
   
     async fetchAllData(querySize, sorting) {
+        // Fetch basic userdata
         const basicUserData = await  this.fetchBasicData(querySize, sorting)
-        console.log("fetchAllData -> basicUserData", basicUserData)
+            //Extract all IDs from basic User data
+        const ids = basicUserData.items.map(item => item.id)
+        // Fetch detailed userdata
+        
         return []
     }, 
 
