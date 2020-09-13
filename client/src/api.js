@@ -14,10 +14,17 @@ const errHandler = err => {
 export default {
     service,
   
-    fetchAllData(querySize, sorting) {
-        console.log("fetchAllData -> sorting", sorting)
-        console.log("fetchAllData -> querySize", querySize)
+    async fetchAllData(querySize, sorting) {
+        const basicUserData = await  this.fetchBasicData(querySize, sorting)
+        console.log("fetchAllData -> basicUserData", basicUserData)
         return []
     }, 
+
+    fetchBasicData(querySize, sorting) {
+        return service
+            .get('/search?length=' + querySize + '&sorting=' + sorting)
+            .then(res => res.data)
+            .catch(errHandler)
+    },
 
 }
