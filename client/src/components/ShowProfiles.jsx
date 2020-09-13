@@ -22,7 +22,7 @@ export default function ShowProfiles(props) {
 
     useEffect(() => {
         api.fetchAllData(querySize, sorting).then(res => setCurrentProfiles(res))
-    }, [sorting])
+    }, [sorting, querySize])
 
     return (
         <div id="show-profiles">
