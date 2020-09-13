@@ -9,6 +9,9 @@ export default function Card(props) {
     const { profile } = props
     const { last_login, name, online_status, picture, is_plus } = profile
     const { distance } = profile.location
+    const { anal_position } = profile.sexual
+    const { age, body_hair, body_type, eye_color, relationship, smoker, weight, height } = profile.personal
+    
     let [isFlipped, setIsFlipped] = useState(false)
 
     const handleClick = (e) => {
@@ -20,7 +23,7 @@ export default function Card(props) {
         <div id="card">
             <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
                 {/* ###### F R O N T ###### */}
-                <div className="card-front" onClick={handleClick}>
+                <div className="card-front">
                     <MDBCard onClick={handleClick}>
                         <div className="card-head">
                             <h3>{name}</h3>
@@ -44,8 +47,29 @@ export default function Card(props) {
                 </div>
         
                 {/* ###### B A C K ###### */}
-                <div className="card-back" onClick={handleClick}>
-                    back
+                <div className="card-back">
+                    <MDBCard onClick={handleClick}>
+                        <div id="profile-pic">
+                            {picture && <img className="img-fluid" src={picture.url} waves />}
+                        </div>
+                        <MDBCardBody>
+                            <div className="user-data-personal">
+                                <h4>{name}</h4>
+                                <ul>
+                                    <li><b>Anal Position:</b>  {anal_position}</li>
+                                    <li><b>Body Hair:</b> {body_hair}</li>
+                                    <li><b>Age:</b> {age}</li>
+                                    <li><b>Body Type:</b> {body_type}</li>
+                                    <li><b>Eye Color:</b> {eye_color}</li>
+                                    <li><b>Relationship:</b> {relationship}</li>
+                                    <li><b>Smoker:</b> {smoker}</li>
+                                    <li><b>Weight:</b> {weight.kg}kg</li>
+                                    <li><b>Height:</b> {height.cm}cm</li>
+                                </ul>
+                                
+                            </div>
+                        </MDBCardBody>
+                    </MDBCard>
                 </div>
             </ReactCardFlip>
         </div>

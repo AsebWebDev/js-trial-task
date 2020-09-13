@@ -1,9 +1,82 @@
 #card {
-    .card-front{
+    .react-card-flipper {
+        max-width: 13rem;
+        margin: 0.3rem;
+        color: whitesmoke;
 
-    }
+        .img-fluid {
+            width: 100%;
+        }
 
-    .card-back {
-        
+        .comment {
+            text-overflow: ellipsis;
+            font-size: 0.6rem;
+            padding: 0.5rem;
+            color: rgb(243, 204, 204);
+        }
+
+        .card {
+            height: 23rem;
+            background-color: #164C64;
+            border-radius: 9px;
+            .statusBox{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .card-body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0 0 1rem 0;
+        }
+
+        .react-card-front {
+            h3 {
+                margin: 0.4rem;
+                font-size: 1.5rem;
+            }
+        }
+
+        .react-card-back {
+            
+            h4 {
+                text-align: center;
+                color: black;
+            }
+
+            .user-data-personal {
+                text-align: left;
+                line-height: normal;
+                font-size: 0.7rem;
+                color: lightgrey;
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: left;
+                    padding: 0;
+                }
+                li {
+                    list-style: none;
+                }
+            }
+
+            .badge {
+                width: fit-content;
+            }
+
+            img {
+                width: 75%;
+                margin: 1rem;
+            }
+        }
+    } 
+    #profile-pic {
+        min-width: 100%;
     }
 }
