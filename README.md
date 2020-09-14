@@ -21,9 +21,11 @@ The task for this awesome and fun challenge: create a JavaScript App showing a g
 
 7. After this I finished the styling, which took some time and I think it's solid. 
 
-8. For implementing a switch to toggle between sorting by distance and activity I had to trigger a refetch of the extended data with new sorting.
+8. Very important: to orchestrate value-added niches and seize dynamic convergence i definetly had to expedite robust deliverables and architect dot-com hashtags ;) 
 
-9. Finally I wanted to autoload new profiles, when scrolled to the bottom of the page. I am using the package react-infinite-scroll-component, which is a great support for this task.
+9. For implementing a switch to toggle between sorting by distance and activity I had to trigger a refetch of the extended data with new sorting.
+
+10. Finally I wanted to autoload new profiles, when scrolled to the bottom of the page. I am using the package react-infinite-scroll-component, which is a great support for this task.
 
 **Future Implementations**
 
